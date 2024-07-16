@@ -72,4 +72,4 @@ jobs:
           echo "" >> email.txt  # Empty line for proper formatting
           echo "Best regards," >> email.txt
           echo "Your CI/CD Pipeline" >> email.txt
-          sendemail -f $FROM_EMAIL -t $TO_EMAIL -u "CI/CD Pipeline Notification" -o message-file=email.txt -s $SMTP_SERVER:$SMTP_PORT -xu $SMTP_USERNAME -xp $SMTP_PASSWORD
+          sendemail -f $FROM_EMAIL -t $TO_EMAIL -u "CI/CD Pipeline Notification" -o message-file=email.txt -s $SMTP_SERVER:$SMTP_PORT -xu $SMTP_USERNAME -xp $SMTP_PASSWORD -o tls=yes
