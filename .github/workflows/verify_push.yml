@@ -16,7 +16,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'  # Specify your Python version here
+          python-version: '3.12.3'  # Specify your Python version here
 
       - name: Install dependencies
         run: |
@@ -27,10 +27,18 @@ jobs:
         run: |
           if [ -f "test_script.py" ]; then
             echo "test_script.py found."
+            export SCRIPT_PATH=$(realpath test_script.py)
+            echo "Script path: $SCRIPT_PATH"
           else
             echo "test_script.py not found. Exiting."
             exit 1
           fi
 
       - name: Run Python command
-        run: python test_script.py  # Replace with your Python command/script path
+        run: |
+          if [ -f "test_script.py" ]; then
+            python $SCRIPT_PATH
+          else
+            echo "test_script.py not found. Cannot run Python command."
+            exit 1
+          fi
