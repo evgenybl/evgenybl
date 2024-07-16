@@ -23,15 +23,16 @@ jobs:
           python -m pip install pytest  # Installed pytest for testing purposes
 
       - name: Define path to test_script.py
-        run: echo "::set-env name=SCRIPT_PATH::$(realpath test_script.py)"
+        id: script_path
+        run: echo "::set-output name=script_path::$(realpath test_script.py)"
 
       - name: Show script path
-        run: echo "Script path: $SCRIPT_PATH"
+        run: echo "Script path: ${{ steps.script_path.outputs.script_path }}"
 
       - name: Run Python command
         run: |
-          if [ -f "$SCRIPT_PATH" ]; then
-            python $SCRIPT_PATH
+          if [ -f "${{ steps.script_path.outputs.script_path }}" ]; then
+            python ${{ steps.script_path.outputs.script_path }}
           else
             echo "Script path not defined or file does not exist."
             exit 1
