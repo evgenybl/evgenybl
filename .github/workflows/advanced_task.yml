@@ -52,6 +52,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     steps:
+      - name: Install sendemail
+        run: sudo apt-get update && sudo apt-get install -y sendemail
+
       - name: Send notification email
         env:
           SMTP_SERVER: smtp.gmail.com
@@ -61,13 +64,12 @@ jobs:
           TO_EMAIL: evgenyb902@gmail.com  # Replace with recipient's email
           FROM_EMAIL: zalupatest@gmail.com  # Replace with sender's email
         run: |
-          echo "Subject: CI/CD Pipeline Notification" > email.txt
-          echo "Your pull request build passed successfully." >> email.txt
+          echo "To: $TO_EMAIL" > email.txt
           echo "From: $FROM_EMAIL" >> email.txt
-          echo "To: $TO_EMAIL" >> email.txt
+          echo "Subject: CI/CD Pipeline Notification" >> email.txt
           echo "" >> email.txt  # Empty line to separate headers from body
           echo "Your pull request build passed successfully." >> email.txt
           echo "" >> email.txt  # Empty line for proper formatting
           echo "Best regards," >> email.txt
           echo "Your CI/CD Pipeline" >> email.txt
-          cat email.txt | ssmtp -v -s smtp.gmail.com:587 -au $SMTP_USERNAME -ap $SMTP_PASSWORD $TO_EMAIL
+          sendemail -f $FROM_EMAIL -t $TO_EMAIL -u "CI/CD Pipeline Notification" -o message-file=email.txt -s $SMTP_SERVER:$SMTP_PORT -xu $SMTP_USERNAME -xp $SMTP_PASSWORD
