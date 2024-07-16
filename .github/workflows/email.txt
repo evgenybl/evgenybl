@@ -1,0 +1,10 @@
+Subject: CI/CD Pipeline - Advanced Task 160724 Notification
+From: zalupatest@gmail.com
+To: evgenyb902@gmail.com
+
+Your pull request build passed successfully.
+
+Go Fucking SLEEP!!!!!!!!!!
+
+Best regards,
+Mr. Zalupaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!!!
