@@ -1,7 +1,16 @@
 # test_script.py
 
-def main():
-    print("Hello, My Name is Evgeny!")
+class MyClass:
+    def __init__(self):
+        pass
+
+    def my_method(self):
+        pass
+
+
+def my_function():
+    pass
+
 
 if __name__ == "__main__":
-    main()
+    print("Hi! My name is Evgeny Blekhman")
