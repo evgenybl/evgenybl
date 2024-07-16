@@ -61,8 +61,8 @@ jobs:
           SMTP_PORT: 587
           SMTP_USERNAME: ${{ secrets.GMAIL_APP_USERNAME }}  # Replace with your Gmail address
           SMTP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}  # Generate an App Password for Gmail and store it as a secret
-          TO_EMAIL: evgenyb902@gmail.com  # Replace with recipient's email
-          FROM_EMAIL: zalupatest@gmail.com  # Replace with sender's email
+          TO_EMAIL: evgenyb@egged.co.il  # Replace with recipient's email
+          FROM_EMAIL: evgenyb902@gmail.com  # Replace with sender's email
         run: |
           echo "To: $TO_EMAIL" > email.txt
           echo "From: $FROM_EMAIL" >> email.txt
