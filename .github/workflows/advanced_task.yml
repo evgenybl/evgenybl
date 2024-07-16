@@ -52,9 +52,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     steps:
-      - name: Install sendemail
-        run: sudo apt-get update && sudo apt-get install -y sendemail
-
       - name: Send notification email
         env:
           SMTP_SERVER: smtp.gmail.com
@@ -62,7 +59,7 @@ jobs:
           SMTP_USERNAME: ${{ secrets.GMAIL_APP_USERNAME }}  # Replace with your Gmail address
           SMTP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}  # Generate an App Password for Gmail and store it as a secret
           TO_EMAIL: evgenyb@egged.co.il  # Replace with recipient's email
-          FROM_EMAIL: evgenyb902@gmail.com  # Replace with sender's email
+          FROM_EMAIL: zalupatest@gmail.com  # Replace with sender's email
         run: |
           echo "To: $TO_EMAIL" > email.txt
           echo "From: $FROM_EMAIL" >> email.txt
@@ -72,4 +69,4 @@ jobs:
           echo "" >> email.txt  # Empty line for proper formatting
           echo "Best regards," >> email.txt
           echo "Your CI/CD Pipeline" >> email.txt
-          sendemail -f $FROM_EMAIL -t $TO_EMAIL -u "CI/CD Pipeline Notification" -o message-file=email.txt -s $SMTP_SERVER:$SMTP_PORT -xu $SMTP_USERNAME -xp $SMTP_PASSWORD -o tls=yes
+          sendemail -f $FROM_EMAIL -t $TO_EMAIL -u "CI/CD Pipeline Notification" -m "$(cat email.txt)" -s $SMTP_SERVER:$SMTP_PORT -xu $SMTP_USERNAME -xp $SMTP_PASSWORD -o tls=yes
