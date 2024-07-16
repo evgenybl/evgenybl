@@ -39,7 +39,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest CICD_Tests/160724/test_script.py
+          python CICD_Tests/160724/test_script.py
 
       - name: Upload coverage report
         uses: actions/upload-artifact@v2
