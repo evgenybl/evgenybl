@@ -22,17 +22,5 @@ jobs:
         run: |
           python -m pip install pytest  # Installed pytest for testing purposes
 
-      - name: Define path to test_script.py
-        run: echo "::set-env name=SCRIPT_PATH::$(realpath test_script.py)"
-
-      - name: Show script path
-        run: echo "Script path: $SCRIPT_PATH"
-
       - name: Run Python command
-        run: |
-          if [ -f "$SCRIPT_PATH" ]; then
-            python $SCRIPT_PATH
-          else
-            echo "Script path not defined or file does not exist."
-            exit 1
-          fi
+        run: python /github/workspace/CICD Tests/160724/test_script.py  # Replace with your Python command/script path
