@@ -23,4 +23,4 @@ jobs:
           python -m pip install pytest  # Installed pytest for testing purposes
 
       - name: Run Python command
-        run: python evgenybl/CICD_Tests/160724/test_script.py  # Replace with your Python command/script path
+        run: python /github/workspace/evgenybl/CICD_Tests/160724/test_script.py  # Replace with your Python command/script path
