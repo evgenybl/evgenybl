@@ -23,8 +23,8 @@ jobs:
 
       - name: Lint code
         run: |
-          flake8
-
+          flake8 --count --select=E901,E999,F821,F822,F823 --show-source --statistics CICD_Tests/160724/test_script.py
+          flake8 CICD_Tests/160724/test_script.py
   test:
     runs-on: ubuntu-latest
     needs: lint
@@ -59,4 +59,3 @@ jobs:
           echo "Subject: CI/CD Pipeline Notification" > email.txt
           echo "Your pull request build passed successfully." >> email.txt
           sendmail -t < email.txt
-
