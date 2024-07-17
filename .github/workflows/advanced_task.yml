@@ -69,7 +69,7 @@ jobs:
           SMTP_PORT: 587
           SMTP_USERNAME: ${{ secrets.GMAIL_USERNAME }}  # Replace with your Gmail address
           SMTP_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}  # Replace with a Gmail App Password
-          TO_EMAIL: your-email@example.com  # Replace with recipient's email
+          TO_EMAIL: evgenyb@egged.co.il  # Replace with recipient's email
           FROM_EMAIL: ${{ secrets.GMAIL_USERNAME }}  # Use your Gmail address as sender
         continue-on-error: true
         run: |
