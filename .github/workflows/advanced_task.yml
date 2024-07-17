@@ -67,6 +67,7 @@ jobs:
         env:
           TO_EMAIL: evgenyb@egged.co.il  # Replace with recipient's email
           FROM_EMAIL: zalupatest@gmail.com  # Replace with sender's email
+        continue-on-error: true
         run: |
           echo "Subject: CI/CD Pipeline Notification" > email.txt
           echo "From: $FROM_EMAIL" >> email.txt
@@ -78,25 +79,39 @@ jobs:
           echo "Your CI/CD Pipeline" >> email.txt
           
           # Using sendmail to send the email
-          sendmail -t < email.txt
+          sendmail -t < email.txt || echo "sendmail failed with exit code: $?" >&2
 
       - name: Send notification email using mailx
         env:
           TO_EMAIL: evgenyb@egged.co.il  # Replace with recipient's email
           FROM_EMAIL: zalupatest@gmail.com  # Replace with sender's email
+        continue-on-error: true
         run: |
-          echo "Your pull request build passed successfully." | mailx -s "CI/CD Pipeline Notification" -r $FROM_EMAIL $TO_EMAIL
+          echo "Your pull request build passed successfully." | mailx -s "CI/CD Pipeline Notification" -r $FROM_EMAIL $TO_EMAIL || echo "mailx failed with exit code: $?" >&2
 
       - name: Send notification email using mutt
         env:
           TO_EMAIL: evgenyb@egged.co.il  # Replace with recipient's email
           FROM_EMAIL: zalupatest@gmail.com  # Replace with sender's email
+        continue-on-error: true
         run: |
-          echo "Your pull request build passed successfully." | mutt -s "CI/CD Pipeline Notification" -- $TO_EMAIL --from $FROM_EMAIL
+          echo "Your pull request build passed successfully." | mutt -s "CI/CD Pipeline Notification" -- $TO_EMAIL --from $FROM_EMAIL || echo "mutt failed with exit code: $?" >&2
 
       - name: Send notification email using mpack
         env:
           TO_EMAIL: evgenyb@egged.co.il  # Replace with recipient's email
           FROM_EMAIL: zalupatest@gmail.com  # Replace with sender's email
+        continue-on-error: true
         run: |
-          echo "Your pull request build passed successfully." | mpack -s "CI/CD Pipeline Notification" -d $TO_EMAIL -r $FROM_EMAIL
+          echo "Your pull request build passed successfully." | mpack -s "CI/CD Pipeline Notification" -d $TO_EMAIL -r $FROM_EMAIL || echo "mpack failed with exit code: $?" >&2
+
+  final-check:
+    runs-on: ubuntu-latest
+    needs: notify
+    steps:
+      - name: Check if all email attempts failed
+        run: |
+          if [ -f "$(find . -name error.log)" ]; then
+            cat error.log
+            exit 1
+          fi
