@@ -63,55 +63,22 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     steps:
-      - name: Send notification email using sendmail
+      - name: Send notification email
         env:
-          TO_EMAIL: evgenyb@egged.co.il  # Replace with recipient's email
-          FROM_EMAIL: zalupatest@gmail.com  # Replace with sender's email
+          SMTP_SERVER: smtp.gmail.com
+          SMTP_PORT: 587
+          SMTP_USERNAME: ${{ secrets.GMAIL_USERNAME }}  # Replace with your Gmail address
+          SMTP_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}  # Replace with a Gmail App Password
+          TO_EMAIL: your-email@example.com  # Replace with recipient's email
+          FROM_EMAIL: ${{ secrets.GMAIL_USERNAME }}  # Use your Gmail address as sender
         continue-on-error: true
         run: |
-          echo "Subject: CI/CD Pipeline Notification" > email.txt
+          echo "To: $TO_EMAIL" > email.txt
           echo "From: $FROM_EMAIL" >> email.txt
-          echo "To: $TO_EMAIL" >> email.txt
+          echo "Subject: CI/CD Pipeline Notification" >> email.txt
           echo "" >> email.txt  # Empty line to separate headers from body
           echo "Your pull request build passed successfully." >> email.txt
           echo "" >> email.txt  # Empty line for proper formatting
           echo "Best regards," >> email.txt
           echo "Your CI/CD Pipeline" >> email.txt
-          
-          # Using sendmail to send the email
-          sendmail -t < email.txt || echo "sendmail failed with exit code: $?" >&2
-
-      - name: Send notification email using mailx
-        env:
-          TO_EMAIL: evgenyb@egged.co.il  # Replace with recipient's email
-          FROM_EMAIL: zalupatest@gmail.com  # Replace with sender's email
-        continue-on-error: true
-        run: |
-          echo "Your pull request build passed successfully." | mailx -s "CI/CD Pipeline Notification" -r $FROM_EMAIL $TO_EMAIL || echo "mailx failed with exit code: $?" >&2
-
-      - name: Send notification email using mutt
-        env:
-          TO_EMAIL: evgenyb@egged.co.il  # Replace with recipient's email
-          FROM_EMAIL: zalupatest@gmail.com  # Replace with sender's email
-        continue-on-error: true
-        run: |
-          echo "Your pull request build passed successfully." | mutt -s "CI/CD Pipeline Notification" -- $TO_EMAIL --from $FROM_EMAIL || echo "mutt failed with exit code: $?" >&2
-
-      - name: Send notification email using mpack
-        env:
-          TO_EMAIL: evgenyb@egged.co.il  # Replace with recipient's email
-          FROM_EMAIL: zalupatest@gmail.com  # Replace with sender's email
-        continue-on-error: true
-        run: |
-          echo "Your pull request build passed successfully." | mpack -s "CI/CD Pipeline Notification" -d $TO_EMAIL -r $FROM_EMAIL || echo "mpack failed with exit code: $?" >&2
-
-  final-check:
-    runs-on: ubuntu-latest
-    needs: notify
-    steps:
-      - name: Check if all email attempts failed
-        run: |
-          if [ -f "$(find . -name error.log)" ]; then
-            cat error.log
-            exit 1
-          fi
+          sendemail -f $FROM_EMAIL -t $TO_EMAIL -u "CI/CD Pipeline Notification" -m "$(cat email.txt)" -s $SMTP_SERVER:$SMTP_PORT -xu $SMTP_USERNAME -xp $SMTP_PASSWORD -o tls=yes
