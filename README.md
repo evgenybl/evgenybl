@@ -37,6 +37,12 @@ Production-grade scripts built from real enterprise work managing 2,000+ users a
 
 ---
 
+## AI-Augmented Workflows
+
+Daily practitioner of AI-assisted IT administration since early 2024. I use Claude, ChatGPT, and GitHub Copilot for PowerShell development, troubleshooting, documentation, and system design. Prompt engineering and context engineering are part of how I work -- turning complex multi-step tasks into streamlined, repeatable workflows.
+
+---
+
 ## Contact
 
 - [LinkedIn](https://www.linkedin.com/in/evgeny-blekhman) | [Email](mailto:blekhmanevgeny@gmail.com)
