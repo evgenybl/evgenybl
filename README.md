@@ -43,6 +43,14 @@ Daily practitioner of AI-assisted IT administration since early 2024. I use Clau
 
 ---
 
+## Also: M365 Graph API Toolkit (Python)
+
+### [m365-graph-api-toolkit](https://github.com/evgenybl/m365-graph-api-toolkit)
+
+Python scripts for Microsoft 365 reporting via Microsoft Graph API. Inactive user detection, license utilization reports, and security alert monitoring.
+
+---
+
 ## Contact
 
 - [LinkedIn](https://www.linkedin.com/in/evgeny-blekhman) | [Email](mailto:blekhmanevgeny@gmail.com)
