@@ -51,6 +51,14 @@ Python scripts for Microsoft 365 reporting via Microsoft Graph API. Inactive use
 
 ---
 
+## Also: n8n Automation Workflows
+
+### [n8n-automation-workflows](https://github.com/evgenybl/n8n-automation-workflows)
+
+Example n8n workflows for IT operations: Docker health monitoring, weekly reporting, and SSL certificate expiry alerting.
+
+---
+
 ## Contact
 
 - [LinkedIn](https://www.linkedin.com/in/evgeny-blekhman) | [Email](mailto:blekhmanevgeny@gmail.com)
