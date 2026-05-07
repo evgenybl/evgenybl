@@ -1,6 +1,6 @@
 # Hi, I'm Evgeny Blekhman
 
-**Microsoft 365 & Azure Administrator | 7+ Years Enterprise Infrastructure | 2,000 Users, 1,000 Servers**
+**Microsoft 365 & Azure Administrator | 8 Years Enterprise Infrastructure | 2,000 Users, 1,000 Servers**
 
 Enterprise IT administrator who managed the full Microsoft stack for a national transportation company with 6,000 employees. Led a 1,000-user VDI deployment, built PowerShell automations that saved 30 hours/week, and ran hybrid Exchange for 2,000+ mailboxes. Available immediately for 100% remote roles.
 
