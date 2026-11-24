@@ -35,8 +35,8 @@ I work with tools and technologies including Claude Code, ChatGPT, n8n, APIs, Mi
 
 | Repository | What it is |
 |---|---|
-| [PowerShell-Enterprise-Toolkit](https://github.com/evgenybl/PowerShell-Enterprise-Toolkit) | Ten administration scripts for Microsoft 365, Active Directory, Entra ID and Exchange Online. Reference code, not yet covered by tests. |
-| [m365-graph-api-toolkit](https://github.com/evgenybl/m365-graph-api-toolkit) | Three Python reports over Microsoft Graph. Reference code, not yet covered by tests. |
+| [PowerShell-Enterprise-Toolkit](https://github.com/evgenybl/PowerShell-Enterprise-Toolkit) [![tests](https://github.com/evgenybl/PowerShell-Enterprise-Toolkit/actions/workflows/tests.yml/badge.svg)](https://github.com/evgenybl/PowerShell-Enterprise-Toolkit/actions/workflows/tests.yml) | Ten administration scripts for Microsoft 365, Active Directory, Entra ID and Exchange Online. Reference code: the tests run every script under stub modules with invented data, on Windows and Linux; no script was run against a live tenant or domain from the repository. |
+| [m365-graph-api-toolkit](https://github.com/evgenybl/m365-graph-api-toolkit) [![tests](https://github.com/evgenybl/m365-graph-api-toolkit/actions/workflows/tests.yml/badge.svg)](https://github.com/evgenybl/m365-graph-api-toolkit/actions/workflows/tests.yml) | Three Python reports over Microsoft Graph. Reference code: the tests run the scripts against an in-memory fake of Microsoft Graph with invented data; the scripts were not run against a live tenant from the repository. |
 
 ### What I can help with
 
