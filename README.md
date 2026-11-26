@@ -1,17 +1,24 @@
 # Evgeny Blekhman
 
-**AI & Automation Specialist | Practical AI Training & Workshops | Business Automation & Integrations**
+**AI & Automation Specialist | Practical AI Training & Workshops | Business Automation & Integrations | 10+ Years in IT, Delivering Business-Critical Solutions**
 
-I work with professionals and businesses to put AI to work through practical training, team workshops, and focused automation projects.
+I help businesses identify where work gets stuck and build practical AI and automation solutions that make everyday operations easier.
 
-My work is hands-on: using AI tools effectively, improving repetitive processes, connecting existing systems, and turning ideas into workflows people can actually use.
+My approach combines business thinking with hands-on technical execution. I start by understanding how a process works today, what needs to improve, and what success would look like. Then I design, build and validate a solution that fits the way people actually work.
 
 ### Projects you can run yourself
 
+My public portfolio includes working demonstrations and workshop materials that show how I approach AI, automation and practical training.
+
 | Project | What it shows |
 |---|---|
-| [AI Collections Follow-up](https://github.com/evgenybl/ai-collections-followup-demo) [![tests](https://github.com/evgenybl/ai-collections-followup-demo/actions/workflows/tests.yml/badge.svg)](https://github.com/evgenybl/ai-collections-followup-demo/actions/workflows/tests.yml) | A weekly collections workflow for a small business. The personal columns never reach the model, every figure the model writes in digits is checked against the sheet, and a person approves before anything is used. Synthetic data, no account or key needed to run it. |
-| [Microsoft 365 Hygiene Brief](https://github.com/evgenybl/m365-hygiene-brief-demo) [![tests](https://github.com/evgenybl/m365-hygiene-brief-demo/actions/workflows/tests.yml/badge.svg)](https://github.com/evgenybl/m365-hygiene-brief-demo/actions/workflows/tests.yml) | PowerShell checks an invented Microsoft 365 tenant against fixed rules, and a model turns the findings into a one-page brief a manager can decide on. Every number the brief writes in digits is checked against the findings; a brief that fails the check is replaced by a fixed template. Read-only by design: neither script can connect to or change a tenant, and a test proves it. Synthetic data; not run against a real tenant. |
+| [AI Lead Intake to CRM](https://github.com/evgenybl/ai-lead-intake-crm-demo) [![tests](https://github.com/evgenybl/ai-lead-intake-crm-demo/actions/workflows/ci.yml/badge.svg)](https://github.com/evgenybl/ai-lead-intake-crm-demo/actions/workflows/ci.yml) | Website enquiries are checked, the same enquiry is never written twice, and nothing is written until a person approves the exact plan. Runs on invented data, no account needed. |
+| [Microsoft 365 Hygiene Brief](https://github.com/evgenybl/m365-hygiene-brief-demo) [![tests](https://github.com/evgenybl/m365-hygiene-brief-demo/actions/workflows/tests.yml/badge.svg)](https://github.com/evgenybl/m365-hygiene-brief-demo/actions/workflows/tests.yml) | One page a manager can decide on, and a work list for the administrator from the Yes answers only. Read-only checks in PowerShell, shown on an invented tenant. |
+| [Practical AI at Work: a workshop kit](https://github.com/evgenybl/practical-ai-workshop-kit) [![tests](https://github.com/evgenybl/practical-ai-workshop-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/evgenybl/practical-ai-workshop-kit/actions/workflows/ci.yml) | A 90-minute hands-on session for non-technical teams: brief an AI assistant well, check what it gives back, and know what never to paste. Offline workbook and instructor guide. |
+| [AI Collections Follow-up](https://github.com/evgenybl/ai-collections-followup-demo) [![tests](https://github.com/evgenybl/ai-collections-followup-demo/actions/workflows/tests.yml/badge.svg)](https://github.com/evgenybl/ai-collections-followup-demo/actions/workflows/tests.yml) | Who to call first and what to say: a ranked call list and reminder drafts from an unpaid-invoices sheet, every figure checked against it, each draft approved by a person. Invented data. |
+| [n8n Automation Workshop Lab](https://github.com/evgenybl/n8n-automation-workshop-lab) [![tests](https://github.com/evgenybl/n8n-automation-workshop-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/evgenybl/n8n-automation-workshop-lab/actions/workflows/ci.yml) | Build a lead-intake flow in n8n that refuses bad input, stops duplicates, waits for a person's approval and says what failed. Two planned sessions, workflows tested in CI. |
+
+Each project's README states its limits: what was tested, and what was not.
 
 ### How these projects are built
 
@@ -29,7 +36,7 @@ At a national transportation company, I worked with complex Microsoft infrastruc
 
 That experience shapes how I approach AI and automation today: understand the real problem, keep the scope clear, validate the result, and make it reliable in everyday operations.
 
-I work with tools and technologies including Claude Code, ChatGPT, n8n, APIs, Microsoft 365, and workflow automation. I also build and operate my own AI-enabled systems as a practical environment for developing and testing approaches.
+Today, I work with Claude Code, ChatGPT, n8n, APIs, Microsoft 365 and workflow automation. I also build and operate my own AI-enabled systems to develop, test and refine practical approaches.
 
 ### Reference code from my years in IT
 
@@ -40,8 +47,10 @@ I work with tools and technologies including Claude Code, ChatGPT, n8n, APIs, Mi
 
 ### What I can help with
 
-- **Practical AI training:** one-to-one guidance for people who want to use AI effectively in their work.
-- **Workshops and team sessions:** hands-on introduction and adoption of AI tools for real tasks.
-- **Automation and integrations:** focused projects that streamline repetitive work and connect the tools a business already uses.
+- **Business automation and integrations:** reduce repetitive work and connect existing tools and systems.
+- **AI adoption and training:** practical workshops, team sessions and one-to-one guidance built around real tasks.
+- **Solution development:** turn a business problem into a clearly scoped, tested solution, from discovery through implementation.
 
-I work in Hebrew and English. If you want to explore how AI or automation could improve a real workflow, send me a message on [LinkedIn](https://www.linkedin.com/in/evgeny-blekhman/).
+I work in Hebrew and English.
+
+If you have a process that takes too much time, creates unnecessary manual work or keeps getting stuck, send me a message on [LinkedIn](https://www.linkedin.com/in/evgeny-blekhman/). I would be interested to understand what a better outcome would look like for your business.
